@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page not found</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: radial-gradient(circle at center, rgba(10,10,20,0.88), rgba(0,0,0,0.96));
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      max-width: 340px;
+      width: 100%;
+      padding: 32px;
+      text-align: center;
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+    }
+
+    .icon-ring {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(167,139,250,0.14);
+      border: 1px solid rgba(167,139,250,0.3);
+    }
+
+    .icon-ring svg {
+      width: 28px;
+      height: 28px;
+      stroke: #a78bfa;
+    }
+
+    .code {
+      color: white;
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin: 0;
+    }
+
+    .message {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.85rem;
+      margin: 0;
+    }
+
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-top: 8px;
+      padding: 11px 20px;
+      box-sizing: border-box;
+      color: white;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      background: linear-gradient(90deg, #a78bfa, #7290f4);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .back-button:hover {
+      background: linear-gradient(90deg, #9575f5, #6183f2);
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon-ring">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="8" x2="12" y2="12"></line>
+        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+      </svg>
+    </div>
+
+    <p class="code">Page not found</p>
+    <p class="message">This link doesn't lead anywhere. Head back to keep listening.</p>
+
+    <a id="back-link" class="back-button" href="#">Back to player</a>
+  </div>
+
+  <script>
+    // The one correct URL this site should ever send people to - update
+    // this if the site is ever moved to a different GitHub Pages address.
+    const SITE_URL = window.location.origin + '/'
+
+    document.getElementById('back-link').href = SITE_URL
+  </script>
+</body>
+</html>
